@@ -8,7 +8,7 @@ class EmptyScreen extends Component {
       <View style={styles.container}>
         <Text style={styles.placeholder}>Nothing to see here</Text>
       </View>
-    )
+    );
   }
 }
 
@@ -27,17 +27,26 @@ let styles = StyleSheet.create({
 });
 
 EmptyScreen.navigationOptions = {
-  title: 'Tab',
+  title: 'Another',
+  tabBar: {
+    icon: ({ tintColor }) => (
+      <Icon
+        name="help-outline"
+        size={32}
+        color={tintColor}
+      />
+    ),
+  },
   header: ({ navigate }) => ({
     left: (
       <Icon
         name="menu"
         size={28}
         onPress={() => navigate('DrawerOpen')}
-        style={{padding: 10}}
+        style={{ padding: 10 }}
       />
-    )
-  })
+    ),
+  }),
 };
 
-export default EmptyScreen
+export default EmptyScreen;

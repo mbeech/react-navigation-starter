@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Card from '../components/Card';
+import ListItem from '../components/ListItem';
 import Loading from '../components/Loading';
 
-class HomeScreen extends Component {
+class PeopleScreen extends Component {
 
   constructor(props) {
     super(props);
@@ -34,27 +34,26 @@ class HomeScreen extends Component {
     }
 
     const items = this.state.items.map(item => (
-      <Card
+      <ListItem
         key={item.sha}
         item={item}
-        navigate={navigate}
       />
     ));
 
     return (
-      <ScrollView style={{ padding: 10 }}>
+      <ScrollView>
         { items }
       </ScrollView>
     );
   }
 }
 
-HomeScreen.navigationOptions = {
-  title: 'Commits',
+PeopleScreen.navigationOptions = {
+  title: 'People',
   tabBar: {
     icon: ({ tintColor }) => (
       <Icon
-        name="restore"
+        name="face"
         size={32}
         color={tintColor}
       />
@@ -69,15 +68,7 @@ HomeScreen.navigationOptions = {
         style={{ padding: 10 }}
       />
     ),
-    right: (
-      <Icon
-        name="search"
-        size={28}
-        onPress={() => navigate('Search')}
-        style={{ padding: 10 }}
-      />
-    ),
   }),
 };
 
-export default HomeScreen;
+export default PeopleScreen;

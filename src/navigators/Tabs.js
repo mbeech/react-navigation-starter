@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import {
-  TabNavigator,
-} from 'react-navigation';
-
+import { TabNavigator } from 'react-navigation';
 import HomeNavigator from './HomeNavigator';
+import PeopleNavigator from './PeopleNavigator';
 import AnotherNavigator from './AnotherNavigator';
 
 const Tabs = TabNavigator({
   Home: {
     screen: HomeNavigator,
     path: '/',
+  },
+  People: {
+    screen: PeopleNavigator,
+    path: '/people',
   },
   Another: {
     screen: AnotherNavigator,
@@ -19,13 +20,9 @@ const Tabs = TabNavigator({
     screen: AnotherNavigator,
     path: '/something',
   },
-  Last: {
-    screen: AnotherNavigator,
-    path: '/last',
-  },
 }, {
   tabBarOptions: {
-    showIcon: true
+    showIcon: true,
   },
 });
 

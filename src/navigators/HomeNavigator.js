@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -10,15 +9,15 @@ import SearchScreen from '../containers/SearchScreen';
 const HomeNavigator = StackNavigator({
   Home: {
     screen: HomeScreen,
-    path: '',
+    path: '/',
   },
   Item: {
     screen: ItemScreen,
-    path: 'item',
+    path: '/item',
   },
   Search: {
     screen: SearchScreen,
-    path: 'search',
+    path: '/search',
   },
 });
 
